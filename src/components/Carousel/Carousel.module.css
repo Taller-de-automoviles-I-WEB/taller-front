@@ -1,0 +1,62 @@
+.carouselContainer {
+    overflow: hidden;
+    position: relative;
+    max-width: 1440px;
+    margin: 1rem 6.94vw 1rem;
+}
+.textContainer {
+    display: grid;
+    gap: 1.875rem;
+    margin: 3.5rem auto;
+    max-width: 35rem;
+    text-align: center;
+}
+.textContainer p {
+    color: #615d6f;
+}
+.carousel {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* Cinco columnas para cinco imágenes */
+    gap: 1rem;
+    transition: transform 0.5s ease; /* Animación de desplazamiento */
+}
+
+.carousel img {
+    width: 100%;
+    height: auto;
+}
+
+.carouselBtn {
+    z-index: 2;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    padding: 1rem;
+    background-color: #f9f9f9;
+    border: none;
+    border-radius: 50%;
+    outline: none;
+}
+.carouselBtn svg {
+    color: #161616;
+    width: 18px;
+    height: 18px;
+}
+
+.prevBtn {
+    left: 0;
+}
+
+.nextBtn {
+    right: 0;
+}
+.carouselBtn:disabled {
+    opacity: .4;
+    border: 1px solid #161616;
+}
+@media (min-width:720px) {
+    .carouselContainer {
+        margin: 1rem 2vw 1rem 6.94vw;
+    }
+}
