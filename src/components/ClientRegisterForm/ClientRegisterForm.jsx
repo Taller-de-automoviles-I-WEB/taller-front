@@ -1,23 +1,52 @@
 import { useForm } from 'react-hook-form';
 import styles from './clientRegisterForm.module.css'
+import Axios from '../../utils/AxiosInstance';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 const ClientRegisterForm = () => {
 
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors },
   } = useForm();
 
+  const notifySuccess = () => toast.success("Consulta enviada con éxito", {
+    position: 'bottom-right',
+    autoClose: 3000,
+    hideProgressBar: false,
+  })
+  const notifyError = () => toast.error("Ha ocurrido un error. Por favor intenta mas tarde", {
+    position: 'bottom-right',
+    autoClose: 1500,
+    hideProgressBar: false,
+  })
+
   const onSubmit = async (data) => {
-    //Post
-    console.log(data)
+    try {
+      console.log('DATA:', data);
+      const response = await Axios.post('/contact/', {
+        ...data
+      })
+      reset()
+      response
+        ? notifySuccess()
+        : notifyError()
+
+    } catch (error) {
+      console.log(error);
+    }
   }
 
   return (
-    <div className={styles.container}>
+    <div className={ styles.container }>
 
-      <h1>Contactanos</h1>
-      <p>Por favor completa el formulario con tus datos y tu consulta.<br></br> Nos pondremos en contacto a la brevedad.</p>
+      <div className={ styles.textContainer }>
+        <h1>Contactanos</h1>
+        <p>Por favor completa el formulario con tus datos y tu consulta.<br></br> Nos pondremos en contacto a la brevedad.</p>
+      </div>
 
       <div className={ styles.formContainer }>
         <form
@@ -41,15 +70,15 @@ const ClientRegisterForm = () => {
             </div>
 
             <input
-              id="nombre"
-              name='nombre'
+              id="firsName"
+              name='firstName'
               placeholder="Nombre"
               className={ styles.groupInput }
               type="text"
-              { ...register('nombre', { required: true }) }
+              { ...register('firstName', { required: true }) }
             />
           </div>
-          { errors.nombre && (
+          { errors.firstName && (
             <small className={ styles.requiredField }>Este campo es obligatorio</small>
           ) }
 
@@ -66,16 +95,16 @@ const ClientRegisterForm = () => {
             </div>
 
             <input
-              id="apellido"
-              name='apellido'
+              id="lastName"
+              name='lastName'
               placeholder="Apellido"
               className={ styles.groupInput }
               type="text"
-              { ...register('apellido', { required: true }) }
+              { ...register('lastName', { required: true }) }
 
             />
           </div>
-          { errors.apellido && (
+          { errors.lastName && (
             <small className={ styles.requiredField }>Este campo es obligatorio</small>
           ) }
 
@@ -92,15 +121,15 @@ const ClientRegisterForm = () => {
             </div>
 
             <input
-              id="telefono"
-              name='telefono'
+              id="phone"
+              name='phone'
               placeholder="Telefono"
               className={ styles.groupInput }
               type="text"
-              { ...register('telefono', { required: true }) }
+              { ...register('phone', { required: true }) }
             />
           </div>
-          { errors.telefono && (
+          { errors.phone && (
             <small className={ styles.requiredField }>Este campo es obligatorio</small>
           ) }
 
@@ -117,14 +146,14 @@ const ClientRegisterForm = () => {
             </div>
 
             <input
-              id="username"
-              name='username'
+              id="email"
+              name='email'
               placeholder="Email"
               className={ styles.groupInput } type="email"
-              { ...register('username', { required: true }) }
+              { ...register('email', { required: true }) }
             />
           </div>
-          { errors.username && (
+          { errors.email && (
             <small className={ styles.requiredField }>Este campo es obligatorio</small>
           ) }
 
@@ -143,15 +172,15 @@ const ClientRegisterForm = () => {
 
             <textarea
               rows={ 5 }
-              id="message"
-              name='message'
+              id="question"
+              name='question'
               placeholder="Tu consulta"
               className={ `${styles.groupInput} ${styles.textArea}` }
-              { ...register('message', { required: true }) }
+              { ...register('question', { required: true }) }
             />
 
           </div>
-          { errors.message && (
+          { errors.question && (
             <small className={ styles.requiredField }>Este campo es obligatorio</small>
           ) }
 
@@ -178,6 +207,10 @@ const ClientRegisterForm = () => {
           </div>
 
         </form>
+      </div>
+
+      <div>
+        <ToastContainer />
       </div>
 
     </div>

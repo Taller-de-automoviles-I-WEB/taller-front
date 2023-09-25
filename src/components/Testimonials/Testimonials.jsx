@@ -8,7 +8,7 @@ import honda from '../../assets/testimonials/testimonials5.png'
 const Testimonials = () => {
   return (
     <div className={styles.testimonials}>
-        <stron className={styles.titleSection}>Testimonials</stron>
+        <strong className={styles.titleSection}>Testimonials</strong>
         <h1 className={styles.bigText}>Las mejores marcas nos avalan</h1>
         <div className={styles.logoContainer}>
             <img src={ww} alt="ww logo" />
