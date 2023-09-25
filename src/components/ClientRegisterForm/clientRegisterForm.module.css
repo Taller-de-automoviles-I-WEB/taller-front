@@ -1,0 +1,84 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h1, p{
+  text-align: center;
+  width: 50%;
+}
+
+.formContainer {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 3rem 0rem 0rem 0rem;
+}
+
+.form {
+  width: 50%;
+  gap: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.inputGroupContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 100%;
+}
+
+.inputGroupIcon {
+  font-size: clamp(1rem, 1.125rem + 0.25vw, 1.5rem);
+}
+
+.groupInput{
+  border: none;
+  border-bottom: 1px solid #161616;
+  background-color: transparent;
+  text-align: center;
+  font-size: 1.125rem;
+  font-family: 'Public Sans', sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color-scheme: light dark;
+  color: #161616;
+  width: 80%;
+}
+
+.textArea {
+  border: 1px solid #161616;
+}
+
+input:-webkit-autofill {
+  -webkit-background-clip: text;
+}
+
+.requiredField {
+  color: #de3434;
+}
+
+.passwordSupportingText {
+  font-size: xx-small;
+  text-align: center;
+}
+
+.registerBtn {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 8px 24px;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #ffb23f;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+
+
