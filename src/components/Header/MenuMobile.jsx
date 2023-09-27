@@ -1,5 +1,6 @@
 import { useState } from "react"
 import style from './menu.module.css'
+import { Link } from "react-router-dom"
 const MenuMobile = () => {
   const [menuState, setMenuState] = useState(false)
   const menuStateHandle = () => {
@@ -16,16 +17,16 @@ const MenuMobile = () => {
         <nav className={style.menuMobileNav}>
           <ul>
             <li>
-              <a href="#">Home</a>
+              <Link to={'/carfixsolutions'}>Home</Link>
             </li>
             <li>
-              <a href="#">Servicios</a>
+              <Link to={'/carfixsolutions/servicios'}>Servicios</Link>
             </li>
             <li>
-              <a href="#">Contactanos</a>
+              <Link to={'/carfixsolutions/contactanos'}>Contactanos</Link>
             </li>
             <li>
-              <a href="#">Login</a>
+              <Link to={'/carfixsolutions/login'}>Login</Link>
             </li>
           </ul>
         </nav>

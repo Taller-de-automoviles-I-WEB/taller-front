@@ -2,7 +2,7 @@ import axios from 'axios';
 
 
 const Axios = axios.create({
-  baseURL: 'http://localhost:3000/api',
+  baseURL: 'https://carfix-dev.fl0.io/api/',
   timeout: 5000,
   timeoutErrorMessage: 'Request timed out',
 });

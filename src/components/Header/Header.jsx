@@ -18,10 +18,10 @@ const Header = () => {
                             <Link to={ '/carfixsolutions' } >Home</Link>
                         </li>
                         <li>
-                            <Link to={ '/servicios' }>Servicios</Link>
+                            <Link to={ 'carfixsolutions/servicios' }>Servicios</Link>
                         </li>
                         <li>
-                            <Link to={ '/contactanos' }>Contactanos</Link>
+                            <Link to={ '/carfixsolutions/contactanos' }>Contactanos</Link>
                         </li>
                     </ul>
                 </nav>
