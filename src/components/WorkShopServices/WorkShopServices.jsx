@@ -5,7 +5,7 @@ const WorkShopServices = () => {
   return (
     <div className={styles.cardsContainer}>
       { cardContent.map((card, index) => (
-        <ServiceCards key={index} img={card.img} title={card.title} description={card.description} callToAction={card.callToAction} />
+        <ServiceCards key={index} img={card.img} imgText={card.imgText} title={card.title} description={card.description} callToAction={card.callToAction} />
       )) }
 
     </div>
