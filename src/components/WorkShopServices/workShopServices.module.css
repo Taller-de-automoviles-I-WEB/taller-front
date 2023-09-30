@@ -1,0 +1,17 @@
+.cardsContainer {
+  display: flex;
+  justify-content: center;
+  margin-top: 6.94vw;
+  flex-wrap: wrap;
+}
+@media (max-width: 768px) {
+  .cardsContainer {
+    display: flex;
+    overflow: auto;
+    margin-top: 6.94vw;
+    flex-wrap: nowrap;
+    justify-content: start;
+    gap: 0rem;
+  }
+}
+
