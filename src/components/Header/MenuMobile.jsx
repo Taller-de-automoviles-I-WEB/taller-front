@@ -20,7 +20,7 @@ const MenuMobile = () => {
               <Link to={'/carfixsolutions'}>Home</Link>
             </li>
             <li>
-              <Link to={'/carfixsolutions/servicios'}>Servicios</Link>
+              {/* <Link to={'/carfixsolutions/servicios'}>Servicios</Link> */}
             </li>
             <li>
               <Link to={'/carfixsolutions/contactanos'}>Contactanos</Link>
