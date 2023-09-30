@@ -1,5 +1,5 @@
 import ServiceCards from "./ServiceCards";
-import { cardContent } from './servicesCardsContent';
+import { cardContent } from './servicesCardsContent.js';
 import styles from './workShopServices.module.css'
 const WorkShopServices = () => {
   return (

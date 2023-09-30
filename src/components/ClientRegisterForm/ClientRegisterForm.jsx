@@ -26,7 +26,6 @@ const ClientRegisterForm = () => {
 
   const onSubmit = async (data) => {
     try {
-      console.log('DATA:', data);
       const response = await Axios.post('/contact/', {
         ...data
       })

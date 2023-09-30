@@ -89,7 +89,8 @@ input:-webkit-autofill {
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #ffb23f;
+  background-color: #000000;
+  color: #ffb23f;
   cursor: pointer;
   transition: border-color 0.25s;
 }
