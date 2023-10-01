@@ -17,16 +17,16 @@ const MenuMobile = () => {
         <nav className={style.menuMobileNav}>
           <ul>
             <li>
-              <Link to={'/carfixsolutions'}>Home</Link>
+              <Link to={'/'}>Home</Link>
             </li>
             <li>
-              <Link to={'/carfixsolutions/servicios'}>Servicios</Link>
+              <Link to={'/servicios'}>Servicios</Link>
             </li>
             <li>
-              <Link to={'/carfixsolutions/contactanos'}>Contactanos</Link>
+              <Link to={'/contactanos'}>Contactanos</Link>
             </li>
             <li>
-              <Link to={'/carfixsolutions/login'}>Login</Link>
+              <Link to={'/login'}>Login</Link>
             </li>
           </ul>
         </nav>

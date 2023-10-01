@@ -15,13 +15,13 @@ const Header = () => {
                 <nav className={ styles.headerNav }>
                     <ul>
                         <li>
-                            <Link to={ '/carfixsolutions' } >Home</Link>
+                            <Link to={ '/' } >Home</Link>
                         </li>
                         <li>
-                            <Link to={ 'carfixsolutions/servicios' }>Servicios</Link>
+                            <Link to={ '/servicios' }>Servicios</Link>
                         </li>
                         <li>
-                            <Link to={ '/carfixsolutions/contactanos' }>Contactanos</Link>
+                            <Link to={ '/contactanos' }>Contactanos</Link>
                         </li>
                     </ul>
                 </nav>
