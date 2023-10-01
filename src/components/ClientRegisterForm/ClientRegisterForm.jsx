@@ -40,15 +40,12 @@ const ClientRegisterForm = () => {
   }
 
   return (
-  
+
     <div className={ styles.container }>
 
-      <div className={ styles.textContainer }>
-        <h1>Contactanos</h1>
-        <p>Por favor completa el formulario con tus datos y tu consulta.<br></br> Nos pondremos en contacto a la brevedad.</p>
-      </div>
 
       <div className={ styles.formContainer }>
+
         <form
           className={ styles.form }
           role="form"
@@ -56,133 +53,149 @@ const ClientRegisterForm = () => {
           onSubmit={ handleSubmit(onSubmit) }
         >
 
-          <div
-            className={ styles.inputGroupContainer }>
+          <div className={ styles.textContainer }>
+            <h2>Contactanos</h2>
+            <p>¿En que podemos ayudarte?</p>
+          </div>
+
+
+          <div className={ styles.inputsContainer }>
 
             <div
-              className={ styles.inputGroupIconContainer }>
+              className={ styles.inputGroupContainer }>
 
-              <i
-                className={ `bi bi-person-check ${styles.inputGroupIcon}` }
-                id="basic-addon2">
-              </i>
+              <div
+                className={ styles.inputGroupIconContainer }>
 
+                <i
+                  className={ `bi bi-person-check ${styles.inputGroupIcon}` }
+                  id="basic-addon2">
+                </i>
+
+              </div>
+
+              <input
+                id="firsName"
+                name='firstName'
+                placeholder="Nombre"
+                className={ styles.groupInput }
+                type="text"
+                { ...register('firstName', { required: true }) }
+              />
             </div>
-
-            <input
-              id="firsName"
-              name='firstName'
-              placeholder="Nombre"
-              className={ styles.groupInput }
-              type="text"
-              { ...register('firstName', { required: true }) }
-            />
-          </div>
-          { errors.firstName && (
-            <small className={ styles.requiredField }>Este campo es obligatorio</small>
-          ) }
-
-          <div
-            className={ styles.inputGroupContainer }>
+            { errors.firstName && (
+              <small className={ styles.requiredField }>Este campo es obligatorio</small>
+            ) }
 
             <div
-              className={ styles.inputGroupIconContainer }>
+              className={ styles.inputGroupContainer }>
 
-              <i
-                className={ `bi bi-person-check ${styles.inputGroupIcon}` } id="basic-addon2">
-              </i>
+              <div
+                className={ styles.inputGroupIconContainer }>
 
+                <i
+                  className={ `bi bi-person-check ${styles.inputGroupIcon}` } id="basic-addon2">
+                </i>
+
+              </div>
+
+              <input
+                id="lastName"
+                name='lastName'
+                placeholder="Apellido"
+                className={ styles.groupInput }
+                type="text"
+                { ...register('lastName', { required: true }) }
+
+              />
             </div>
-
-            <input
-              id="lastName"
-              name='lastName'
-              placeholder="Apellido"
-              className={ styles.groupInput }
-              type="text"
-              { ...register('lastName', { required: true }) }
-
-            />
-          </div>
-          { errors.lastName && (
-            <small className={ styles.requiredField }>Este campo es obligatorio</small>
-          ) }
-
-          <div
-            className={ styles.inputGroupContainer }>
+            { errors.lastName && (
+              <small className={ styles.requiredField }>Este campo es obligatorio</small>
+            ) }
 
             <div
-              className={ styles.inputGroupIconContainer }>
+              className={ styles.inputGroupContainer }>
 
-              <i
-                className={ `bi bi-phone ${styles.inputGroupIcon}` } id="basic-addon2">
-              </i>
+              <div
+                className={ styles.inputGroupIconContainer }>
 
+                <i
+                  className={ `bi bi-phone ${styles.inputGroupIcon}` } id="basic-addon2">
+                </i>
+
+              </div>
+
+              <input
+                id="phone"
+                name='phone'
+                placeholder="Telefono"
+                className={ styles.groupInput }
+                type="text"
+                { ...register('phone', { required: true }) }
+              />
             </div>
-
-            <input
-              id="phone"
-              name='phone'
-              placeholder="Telefono"
-              className={ styles.groupInput }
-              type="text"
-              { ...register('phone', { required: true }) }
-            />
-          </div>
-          { errors.phone && (
-            <small className={ styles.requiredField }>Este campo es obligatorio</small>
-          ) }
-
-          <div
-            className={ styles.inputGroupContainer }>
+            { errors.phone && (
+              <small className={ styles.requiredField }>Este campo es obligatorio</small>
+            ) }
 
             <div
-              className={ styles.inputGroupIconContainer }>
+              className={ styles.inputGroupContainer }>
 
-              <i
-                className={ `bi bi-envelope-at ${styles.inputGroupIcon}` } id="basic-addon2">
-              </i>
+              <div
+                className={ styles.inputGroupIconContainer }>
 
+                <i
+                  className={ `bi bi-envelope-at ${styles.inputGroupIcon}` } id="basic-addon2">
+                </i>
+
+              </div>
+
+              <input
+                id="email"
+                name='email'
+                placeholder="Email"
+                className={ styles.groupInput } type="email"
+                { ...register('email', { required: true }) }
+              />
             </div>
+            { errors.email && (
+              <small className={ styles.requiredField }>Este campo es obligatorio</small>
+            ) }
 
-            <input
-              id="email"
-              name='email'
-              placeholder="Email"
-              className={ styles.groupInput } type="email"
-              { ...register('email', { required: true }) }
-            />
+
           </div>
-          { errors.email && (
-            <small className={ styles.requiredField }>Este campo es obligatorio</small>
-          ) }
 
-          <div
-            className={ styles.inputGroupContainer }>
+          <div>
 
             <div
-              className={ styles.inputGroupIconContainer }>
+              className={ styles.inputGroupContainer }>
 
-              <i
-                className={ `bi bi-pen ${styles.inputGroupIcon}` }
-                id="basic-addon2">
-              </i>
+              <div
+                className={ styles.inputGroupIconContainer }>
+
+                <i
+                  className={ `bi bi-pen ${styles.inputGroupIcon}` }
+                  id="basic-addon2">
+                </i>
+
+              </div>
+
+              <textarea
+                rows={ 5 }
+                cols={ 30 }
+                id="question"
+                name='question'
+                placeholder="Tu consulta"
+                className={ `${styles.groupInput} ${styles.textArea}` }
+                { ...register('question', { required: true }) }
+              />
 
             </div>
-
-            <textarea
-              rows={ 5 }
-              id="question"
-              name='question'
-              placeholder="Tu consulta"
-              className={ `${styles.groupInput} ${styles.textArea}` }
-              { ...register('question', { required: true }) }
-            />
+            { errors.question && (
+              <small className={ styles.requiredField }>Este campo es obligatorio</small>
+            ) }
 
           </div>
-          { errors.question && (
-            <small className={ styles.requiredField }>Este campo es obligatorio</small>
-          ) }
 
           <div
             className={ styles.inputGroupContainer }>
@@ -200,13 +213,15 @@ const ClientRegisterForm = () => {
             <input
               className={ styles.registerBtn }
               type="submit"
-              value='Registrarme'
+              value='Enviar'
             // disabled={ loading }
             />
 
           </div>
 
+
         </form>
+
       </div>
 
       <div>
